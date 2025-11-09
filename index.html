@@ -92,6 +92,10 @@
                     <h2>BIO AGRO</h2>
                 </div>
                 <div class="nav-contact">
+                    <button class="share-button" onclick="shareToFriend()" title="Compartilhar com um amigo">
+                        <i class="fas fa-share-alt" aria-hidden="true"></i>
+                        <span class="share-text">Compartilhar</span>
+                    </button>
                     <a href="tel:+5521965525991" class="phone-link" title="Ligar para Bio Agro">
                         <i class="fas fa-phone" aria-hidden="true"></i>
                         <span class="sr-only">Telefone: </span>
@@ -216,6 +220,14 @@
                         <p class="form-disclaimer">
                             * Campos obrigatórios. Seus dados estão seguros conosco.
                         </p>
+
+                        <div class="share-section">
+                            <p class="share-title">💡 Conhece alguém que também precisa?</p>
+                            <button type="button" class="btn-share" onclick="shareToFriend()">
+                                <i class="fas fa-share-alt"></i>
+                                COMPARTILHAR COM UM AMIGO
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -241,7 +253,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/5521965525991" target="_blank">WhatsApp</a>
+                        <a href="https://wa.me/5521965525991" target="_blank" rel="noopener">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -253,7 +265,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5521965525991" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5521965525991" class="whatsapp-float" target="_blank" rel="noopener" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

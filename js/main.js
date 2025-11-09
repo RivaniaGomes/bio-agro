@@ -400,6 +400,84 @@ function closeErrorModal() {
     }
 }
 
+// Função para compartilhar com amigo via WhatsApp
+function shareToFriend() {
+    const siteUrl = window.location.href;
+    
+    // Mensagem otimizada para WhatsApp
+    const shareMessage = `Oi! Conhece alguem que precisa descartar residuos?
+
+Achei uma empresa interessante:
+
+*Bio Agro*
+- Coleta com custo reduzido
+- Transforma residuos em adubo organico
+- Atende regiao serrana
+
+Confere ai: ${siteUrl}`;
+
+    // URL do WhatsApp
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
+    
+    // Abrir WhatsApp
+    openWhatsAppShare(whatsappUrl);
+}
+
+function openWhatsAppShare(whatsappUrl) {
+    // Tentar diferentes métodos para garantir que funcione
+    try {
+        // Método 1: window.open (mais comum)
+        const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        
+        // Se não conseguir abrir, tentar método alternativo
+        if (!newWindow) {
+            // Método 2: location.href como fallback
+            window.location.href = whatsappUrl;
+        }
+    } catch (error) {
+        // Método 3: Fallback final
+        window.location.href = whatsappUrl;
+    }
+    
+    trackEvent('share_success', 'WhatsApp Share', 'Friend Referral');
+    
+    // Mostrar toast de confirmação
+    showShareToast();
+}
+
+
+
+function showShareToast() {
+    // Criar toast de confirmação
+    const toast = document.createElement('div');
+    toast.className = 'share-toast';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Compartilhamento aberto no WhatsApp!</span>
+        </div>
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Mostrar toast com animação
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 100);
+    
+    // Remover toast após 3 segundos
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.remove();
+            }
+        }, 300);
+    }, 3000);
+}
+
+
+
 // Efeitos do header ao fazer scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
@@ -431,6 +509,11 @@ document.addEventListener('click', function(e) {
     // Track button clicks
     if (e.target.matches('.btn-primary, .btn-form')) {
         trackEvent('click', 'Button', e.target.textContent.trim());
+    }
+    
+    // Track share button clicks
+    if (e.target.matches('.share-button, .btn-share') || e.target.closest('.share-button, .btn-share')) {
+        trackEvent('click', 'Share', 'Friend Referral Button');
     }
     
     // Track WhatsApp clicks

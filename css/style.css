@@ -168,6 +168,12 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
 .nav-contact .phone-link {
     display: flex;
     align-items: center;
@@ -181,6 +187,41 @@ p {
 .nav-contact .phone-link:hover {
     color: var(--verde-escuro);
     transform: scale(1.05);
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: transparent;
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.share-button:hover {
+    background: var(--verde-principal);
+    color: var(--bege-creme);
+    transform: scale(1.05);
+}
+
+.share-button i {
+    font-size: 1rem;
+}
+
+.share-text {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .share-text {
+        display: inline;
+    }
 }
 
 .hero-content {
@@ -395,10 +436,54 @@ p {
     margin: 0;
 }
 
+/* Seção de Compartilhamento */
+.share-section {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(216, 229, 191, 0.3);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--verde-claro);
+}
+
+.share-title {
+    color: var(--verde-principal);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-share {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: transparent;
+    color: var(--verde-principal);
+    border: 2px solid var(--verde-principal);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.btn-share:hover {
+    background: var(--verde-principal);
+    color: var(--bege-creme);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-share i {
+    font-size: 1rem;
+}
+
 /* Footer */
 .footer {
     background: var(--marrom);
-    color: white;
+    color: var(--bege-creme);
     padding: var(--spacing-xl) 0 var(--spacing-md);
 }
 
@@ -1046,6 +1131,50 @@ a:focus {
     .formulario-card {
         flex: 1 1 300px;
         margin: var(--spacing-md);
+    }
+}
+
+/* Toast de Compartilhamento */
+.share-toast {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--verde-principal);
+    color: var(--bege-creme);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-heavy);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.share-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.toast-content i {
+    color: var(--verde-claro);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .share-toast {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        bottom: 80px;
     }
 }
 
