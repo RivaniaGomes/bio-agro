@@ -1,0 +1,38 @@
+# Arquivos de configuração de ferramentas de desenvolvimento
+.hintrc
+.eslintrc*
+.prettierrc*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos temporários
+*.tmp
+*.temp
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (caso use no futuro)
+node_modules/
+
+# Arquivos de build (caso use no futuro)
+dist/
+build/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.production
+
+# Cache
+.cache/
