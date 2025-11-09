@@ -31,13 +31,23 @@ A paleta de cores foi especialmente desenvolvida para remeter ao agronegócio:
 4. **Footer** - Informações de contato e localização
 5. **Botão Flutuante WhatsApp** - Acesso rápido ao contato
 
+### 🔄 Nova Funcionalidade: Compartilhamento via WhatsApp
+- **Botão no Header**: "Compartilhar" discreto e integrado à navegação
+- **Seção no Formulário**: Call-to-action "Conhece alguém que também precisa?"
+- **Mensagem Personalizada**: Texto otimizado para indicação de amigos
+- **URL Dinâmica**: Funciona em desenvolvimento (localhost) e produção
+- **Toast de Confirmação**: Feedback visual quando compartilhamento é aberto
+- **Tracking Integrado**: Monitora uso da funcionalidade para analytics
+
 ### Recursos Técnicos:
 - ✅ Design responsivo (mobile-first)
 - ✅ Formulário com validação em tempo real
 - ✅ Máscara automática para telefone brasileiro
 - ✅ Integração completa com WhatsApp
+- ✅ **Funcionalidade de compartilhamento "Encaminhar para um amigo"**
 - ✅ Animações suaves de entrada (Intersection Observer)
 - ✅ Modal de sucesso e erro personalizados
+- ✅ Toast de confirmação para ações
 - ✅ Botão flutuante do WhatsApp sempre visível
 - ✅ Smooth scrolling entre seções
 - ✅ Schema Markup (JSON-LD) para SEO
@@ -124,6 +134,8 @@ A landing page foi desenvolvida com abordagem mobile-first e breakpoints:
 - Mensagem pré-formatada com dados do formulário após submissão
 - Mensagem padrão para contato direto
 - Links de telefone redirecionam para WhatsApp
+- **Compartilhamento de Indicação**: Funcionalidade "Encaminhar para um amigo"
+- **Mensagem de Referência**: Texto otimizado para indicação de prospects
 - Número atual: (21) 96552-5991
 
 ### Formulário:
@@ -135,12 +147,48 @@ A landing page foi desenvolvida com abordagem mobile-first e breakpoints:
 - Modal de erro com opções de contato alternativo
 - Integração com EmailJS configurável
 
+## 🔄 Funcionalidade de Compartilhamento
+
+### Como Funciona:
+A funcionalidade "Encaminhar para um amigo" permite que visitantes compartilhem o site com conhecidos que também podem se interessar pelo serviço.
+
+### Localização dos Botões:
+1. **Header/Navegação**: Botão "Compartilhar" discret ao lado do telefone
+2. **Seção do Formulário**: Call-to-action destacado após o formulário de pré-cadastro
+
+### Mensagem de Compartilhamento:
+```
+Oi! Conhece alguem que precisa descartar residuos?
+
+Achei uma empresa interessante:
+
+*Bio Agro*
+- Coleta com custo reduzido
+- Transforma residuos em adubo organico
+- Atende regiao serrana
+
+Confere ai: [URL DO SITE]
+```
+
+### Características Técnicas:
+- **URL Dinâmica**: Detecta automaticamente se está em localhost ou produção
+- **Codificação Segura**: Mensagem otimizada para evitar problemas de caracteres especiais
+- **Fallback Robusto**: Múltiplos métodos de abertura do WhatsApp
+- **Feedback Visual**: Toast de confirmação quando compartilhamento é aberto
+- **Tracking**: Eventos rastreados para análise de engajamento
+
+### Benefícios de Marketing:
+- **Marketing Viral**: Facilita indicações espontâneas de clientes satisfeitos
+- **Redução CAC**: Prospects indicados têm maior taxa de conversão
+- **Alcance Orgânico**: Expansão da base de leads sem custo adicional
+- **Credibilidade**: Indicações pessoais geram mais confiança
+
 ## 🎯 Conversão e Analytics
 
 O código inclui funções preparadas para:
 - Google Analytics (gtag)
-- Tracking de eventos (cliques, submissões, scroll)
-- Métricas de engajamento
+- Tracking de eventos (cliques, submissões, scroll, compartilhamentos)
+- Métricas de engajamento e indicações
 
 ## 📞 Suporte e Personalização
 
@@ -175,6 +223,9 @@ Para configurar o envio de emails:
 - [ ] Blog com dicas de sustentabilidade
 - [ ] Calculadora de volume de resíduos
 - [ ] Mapa de cobertura interativo
+- [ ] Programa de indicações com recompensas
+- [ ] Dashboard de analytics para compartilhamentos
+- [ ] Personalização da mensagem de compartilhamento
 
 ---
 
