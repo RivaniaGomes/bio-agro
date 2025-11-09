@@ -52,7 +52,7 @@ A paleta de cores foi especialmente desenvolvida para remeter ao agronegócio:
    ```
 
 2. **Personalizar informações:**
-   - Altere o número do WhatsApp em `js/main.js` (linha com `5527999999999`)
+   - Altere o número do WhatsApp em `js/main.js` (linha com `5521965525991`)
    - Modifique textos e informações conforme necessário
    - Substitua as imagens placeholder por fotos reais
 

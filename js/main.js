@@ -360,14 +360,14 @@ function setupWhatsAppIntegration() {
 
 function sendToWhatsApp(formData) {
     const message = formatWhatsAppMessage(formData);
-    const whatsappUrl = `https://wa.me/5521975629640?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5521965525991?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
 function openWhatsApp(customMessage = null) {
     const defaultMessage = `Olá! Gostaria de conhecer a proposta da Bio Agro para o descarte de resíduos do meu galpão.`;
     const message = customMessage || defaultMessage;
-    const whatsappUrl = `https://wa.me/5521975629640?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5521965525991?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
